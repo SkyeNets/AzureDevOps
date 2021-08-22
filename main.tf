@@ -10,12 +10,13 @@ terraform {
 }
 */
 
+/*
 variable "imagebuild" {
   type        = string
   description = "Latest Image Build"
   default = "weatherapi"
 }
-
+*/
 
 
 resource "azurerm_resource_group" "tf_test" {
