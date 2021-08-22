@@ -1,5 +1,5 @@
 variable "imagebuild" {
-  type = string
+  type        = string
   description = "Latest Image Build"
 
 }

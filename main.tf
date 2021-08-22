@@ -20,30 +20,30 @@ variable "imagebuild" {
 
 
 resource "azurerm_resource_group" "tf_test" {
-  name = "tfmainrg"
+  name     = "tfmainrg"
   location = "East US"
 }
 
 
 resource "azurerm_container_group" "tfcg_test" {
-  name                      = "weatherapi"
-  location                  = azurerm_resource_group.tf_test.location
-  resource_group_name       = azurerm_resource_group.tf_test.name
+  name                = "weatherapi"
+  location            = azurerm_resource_group.tf_test.location
+  resource_group_name = azurerm_resource_group.tf_test.name
 
-  ip_address_type     = "public"
-  dns_name_label      = "rt2kwa"
-  os_type             = "Linux"
+  ip_address_type = "public"
+  dns_name_label  = "rt2kwa"
+  os_type         = "Linux"
 
   container {
-      name            = "weatherapi"
-      image           = "rt2k/weatherapi:${var.imagebuild}"
-        cpu             = "1"
-        memory          = "1"
+    name   = "weatherapi"
+    image  = "rt2k/weatherapi:${var.imagebuild}"
+    cpu    = "1"
+    memory = "1"
 
-        ports {
-            port        = 80
-            protocol    = "TCP"
-        }
+    ports {
+      port     = 80
+      protocol = "TCP"
+    }
   }
 }
 
