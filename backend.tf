@@ -7,7 +7,7 @@ terraform {
     storage_account_name = "skyeremotesa01"
     container_name       = "tfstate"
     key                  = "backend.tfstate"
-    subscription_id = "561e8bcf-bcc2-424d-ab9b-508631bfa49c"
+    subscription_id = "953ffea1-7504-4a80-b6ad-239156bd6baa"
   }
 
 }
