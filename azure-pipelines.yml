@@ -42,7 +42,7 @@ stages:
       - script: |
           set -e
 
-          terraform init -input=false -backend-config="./backend.tfvars"
+          terraform init -input=false 
           terraform apply -input=false -auto-approve
         name: 'RunTerraform'
         displayName: 'Run Terraform'
