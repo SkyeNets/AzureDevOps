@@ -9,7 +9,7 @@ terraform {
   }
 }
 
-# Microsoft Azure Terraform Provider
+# MICROSOFT AZURE TERRAFORM PROVIDER
 provider "azurerm" {
   features {}
 

@@ -1,30 +1,12 @@
+# PROVISIONING DOCKER CONTAINER ON AZURE CLOUD
 
-/*
-terraform {
-    backend "azurerm" {
-        resource_group_name  = "tf_rg_blobstore"
-        storage_account_name = "tfstoragebinarythistle"
-        container_name       = "tfstate"
-        key                  = "terraform.tfstate"
-    }
-}
-*/
-
-/*
-variable "imagebuild" {
-  type        = string
-  description = "Latest Image Build"
-  default = "weatherapi"
-}
-*/
-
-
+# AZURE RESOURCE GROUP
 resource "azurerm_resource_group" "tf_test" {
   name     = "tfmainrg"
   location = "East US"
 }
 
-
+# AZURE CONTAINER GROUP
 resource "azurerm_container_group" "tfcg_test" {
   name                = "weatherapi"
   location            = azurerm_resource_group.tf_test.location
@@ -46,5 +28,4 @@ resource "azurerm_container_group" "tfcg_test" {
     }
   }
 }
-
 
